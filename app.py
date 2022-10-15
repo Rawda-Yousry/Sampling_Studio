@@ -1,43 +1,44 @@
-from flask import Flask, render_template,request,redirect,url_for
-import os
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib import animation
+import mpld3
+import streamlit.components.v1 as components
+import csv
+from io import StringIO
 
 
-app = Flask(__name__)
 
-@app.route('/',methods=['GET', 'POST'])
-def home():
-    if request.method == "POST":
-        file = request.files['csvfile']
-        if not os.path.isdir('static'):
-            os.mkdir('static')
-        filepath = os.path.join('static',file.filename)
-        file.save(filepath)
-        return redirect(url_for('dash'))
-    return render_template('home.html')
+uploaded_file = st.file_uploader( "UPLOAD signal file here")
+if uploaded_file is not None:
+    # To read file as bytes:
+    bytes_data = uploaded_file.getvalue()
+    st.write(bytes_data)
 
+    # To convert to a string based IO:
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    st.write(stringio)
 
-@app.route('/dash',methods=['GET','POST'])
-def dash():
-    if request.method == 'POST':
-        variable1 = request.form['variable1']
-        variable2 = request.form['variable2']
-        data = pd.read_csv('static/test.csv')
-        x = data[variable1]
-        y = data[variable2]
-        plt.plot(x,y)
-        imagepath = os.path.join('static','image' + '.png')
-        plt.savefig(imagepath)
-        return render_template('image.html',image = imagepath)
-    return render_template('dash.html')
+    # To read file as string:
+    string_data = stringio.read()
+    st.write(string_data)
+
+    reader =  pd.read_csv(uploaded_file)
+    count = 0 #df = pd.read_csv("input.csv", usecols=columns)
+    arr1 = []
+    arr2 = []
     
-
-
-
-if __name__ =="__main__":
-    app.run(debug=True)
-
-
-
-
+    fig = plt.figure() 
+    for row in reader:
+        arr1.append(row[0])
+        arr2.append(row[1])
+        if count > 10:
+            break
+    arr1.remove(arr1[0])
+    arr2.remove(arr2[0])
+    arr1Up = [float(x) for x in arr1]
+    arr2Up = [float(x) for x in arr2]
+    plt.plot(arr1Up,arr2Up)
+    fig_html = mpld3.fig_to_html(fig)
+    components.html(fig_html, height=600)
+    st.pyplot(fig)
