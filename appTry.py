@@ -29,14 +29,15 @@ fig= plt.figure(figsize=(9,5))
 plt.subplots_adjust(bottom=0.1,
                     top=1)
 
-# plt.suptitle("Sampling a Sine Wave of Fmax=20Hz with fs=35Hz", fontsize=20)
+
 plt.subplot(211)
-plt.plot(t, x1,label='SineWave of frequency 20 Hz')
+plt.plot(t, x1,label='SineWave of frequency ' + str(f))
 plt.xlabel('time', fontsize=15)
 plt.ylabel('Amplitude', fontsize=15)
+plt.legend(fontsize=10, loc='upper right')
 
 plt.subplot(212)
-plt.plot(nT, x2, 'ro', label='Sample marks after resampling at fs= ' + str(sampleRate))
+plt.plot(nT, x2, 'ro', label='Sample marks after resampling at fs= ' + str(sampleRate*nT[-1]) +' Hz')
 plt.plot(nT, x2, 'g-', label='Reconstructed Sine Wave')
 plt.legend(fontsize=10, loc='upper right')
 
