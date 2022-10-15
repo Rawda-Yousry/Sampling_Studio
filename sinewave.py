@@ -24,20 +24,21 @@ s_rate = sampleRate # Hz. Here the sampling frequency is less than the requireme
 T = 1 / s_rate 
 n = np.arange(0, 0.5/ T) 
 nT = n * T
-x2 = np.sin(2 * np.pi * f * nT) # Since for sampling t = nT.
+x2 = np.sin(2 * np.pi * f * nT ) # Since for sampling t = nT.
 fig= plt.figure(figsize=(9,5))
-plt.subplots_adjust(bottom=0.1,
+plt.subplots_adjust(bottom=0.1,right =0.7,left=0.05,
                     top=1)
 
 
-plt.subplot(211)
+plt.subplot(211) # 2 rows, 2 columns, plot number 1
+# plt.ylim(-1,1)
 plt.plot(t, x1,label='SineWave of frequency ' + str(f))
 plt.xlabel('time', fontsize=15)
 plt.ylabel('Amplitude', fontsize=15)
 plt.legend(fontsize=10, loc='upper right')
 
 plt.subplot(212)
-plt.plot(nT, x2, 'ro', label='Sample marks after resampling at fs= ' + str(sampleRate*nT[-1]) +' Hz')
+plt.plot(nT, x2, 'ro', label='Sample marks after resampling at fs= ' + str(sampleRate) +' Hz')
 plt.plot(nT, x2, 'g-', label='Reconstructed Sine Wave')
 plt.legend(fontsize=10, loc='upper right')
 

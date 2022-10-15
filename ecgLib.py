@@ -9,7 +9,6 @@ import numpy as np
 # define electrocardiogram as ecg model
 ecg = electrocardiogram()
 
-  
 # frequency is 360
 fs = st.slider('Sample Size', 330, 400,30)
 frequency = 360
