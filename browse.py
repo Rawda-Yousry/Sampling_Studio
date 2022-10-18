@@ -8,10 +8,13 @@ import csv
 from io import StringIO
 from datetime import datetime
 import numpy as np
+from scipy.signal import resample
 
 
-
+f = st.slider('Frequency', 50, 700, 25)
+sampleRate = st.slider('Sample Frequency', 50, 700, 25)
 uploaded_file = st.file_uploader( "UPLOAD signal file here")
+
 if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
@@ -23,37 +26,32 @@ if uploaded_file is not None:
 
     # To read file as string:
     string_data = stringio.read()
-    # st.write(string_data)
 
-    # Can be used wherever a "file-like" object is accepted:
-    # dataframe = pd.read_csv(uploaded_file)
-    # st.write(dataframe)
-    # st.write(uploaded_file)
-
-# str_filename = 'uploaded_file.csv'
-# fh = dataframe = pd.read_csv(uploaded_file)
-# csv_reader = csv.reader(fh)
-# csv_header = next(csv_reader)
-# lst_dt_csv = next (csv_reader)
-# dt_csv = np.array(list(map(datetime.fromisoformat,lst_dt_csv[1:3])))
-# lst_fs = next(csv_reader)
-# np_d_fs = np.array(list(map(float,lst_fs[1:3])))
-# fh.close()
-# df_sig = pd.read_csv(uploaded_file, header = None, skiprows = 5, names = csv_reader)
-# st.pyplot.df_sig
-# st.pyplot.xlabel('sample number')
-# st.pyplot.ylabel('signal value, volts')
-
-
+    # fig= plt.figure(figsize=(9,6.5))
+    # plt.subplots_adjust(bottom=0.109,right =0.7,left=0.05,
+    #                 top=1)
+    plt.subplots_adjust(bottom=0.109,right =0.7,left=0.05,
+                    top=1)
 
 # with open("uploaded_file.csv") as csvfile:
-    fig,ax = plt.subplots()
+    fig = plt.figure()
     df =  pd.read_csv(uploaded_file)
     x = df.iloc[:,0]
     y = df.iloc[:,1]
-    ax.plot(x,y)
-    st.pyplot(fig = fig)
+    plt.subplot(211)
+    t= np.linspace(0,0.5,f)
+    yup = resample(y,f)
+    plt.plot(t,yup)
+    
 
+    tup = np.linspace(0,0.5,sampleRate)
+    y1 = resample(y,sampleRate)
+    # y1 = resample(y,sampleRate)
+    plt.subplot(212)
+    plt.plot(tup,y1)
+
+    fig_html = mpld3.fig_to_html(fig)
+    components.html(fig_html, height=600)
 
 
 
@@ -89,6 +87,5 @@ if uploaded_file is not None:
     # arr1Up = [float(x) for x in arr1]
     # arr2Up = [float(x) for x in arr2]
     # plt.plot(arr1Up,arr2Up)
-    # fig_html = mpld3.fig_to_html(fig)
-    # components.html(fig_html, height=600)
+
     # st.pyplot(fig) 
