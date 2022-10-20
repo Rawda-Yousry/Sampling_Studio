@@ -38,24 +38,43 @@ if uploaded_file is not None:
     df =  pd.read_csv(uploaded_file)
     x = df.iloc[:,0]
     y = df.iloc[:,1]
+    z= df.iloc[:,2]
     plt.subplot(211)
-    t= np.linspace(0,0.5,f)
-    yup = resample(y,f)
-    plt.plot(t,yup)
+    # t= np.linspace(0,0.5,f)
+    # yup = resample(y,f)
+    plt.plot(x,y)
+    def sinc_interp(factor,fmax,x,y):
+        # t_axis = np.linspace(0,0.5,len(y_axis))
+        samplingTime = np.arange(0,1.1,1/(factor*fmax))
+        # if len(y_axis) != len(t_axis):
+        #     raise (Exception,'t and y must be the same length')
+        # Find the period
+        x = np.array(x)    
+        T = (x[1] - x[0])
+        # t_axis = np.array(t_axis)
+        # samplingTime = np.array(samplingTime)
+        sincM = np.tile(samplingTime, (len(x), 1)) - np.tile(x[:, np.newaxis], (1, len(samplingTime)))
+        yNew = np.dot(y, np.sinc(sincM/T))
+        plt.subplot(211)
+        plt.plot(samplingTime,yNew,'ro')
     
 
-    tup = np.linspace(0,0.5,sampleRate)
-    y1 = resample(y,sampleRate)
+    # tup = np.linspace(0,0.5,sampleRate)
     # y1 = resample(y,sampleRate)
-    plt.subplot(212)
-    plt.plot(tup,y1)
+    # # y1 = resample(y,sampleRate)
+    
+    # plt.plot(tup,y1)
+    
+    frequency = st.slider("freq",1,300) 
+    factor = st.slider("Factor",1,300)
+    sinc_interp(factor, frequency, x, z)
+
 
     fig_html = mpld3.fig_to_html(fig)
     components.html(fig_html, height=600)
 
 
 
-   
 
 # df = pd.read_csv('data.csv')
 
