@@ -11,8 +11,8 @@ import numpy as np
 from scipy.signal import resample
 
 
-f = st.slider('Frequency', 50, 700, 25)
-sampleRate = st.slider('Sample Frequency', 50, 700, 25)
+# f = st.slider('Frequency', 50, 700, 25)
+# sampleRate = st.slider('Sample Frequency', 50, 700, 25)
 uploaded_file = st.file_uploader( "UPLOAD signal file here")
 
 if uploaded_file is not None:
@@ -43,9 +43,9 @@ if uploaded_file is not None:
     # t= np.linspace(0,0.5,f)
     # yup = resample(y,f)
     plt.plot(x,y)
-    def sinc_interp(factor,fmax,x,y):
+    def sinc_interp(fsample,x,y):
         # t_axis = np.linspace(0,0.5,len(y_axis))
-        samplingTime = np.arange(0,1.1,1/(factor*fmax))
+        samplingTime = np.arange(0,1.1,1/(fsample))
         # if len(y_axis) != len(t_axis):
         #     raise (Exception,'t and y must be the same length')
         # Find the period
@@ -56,7 +56,8 @@ if uploaded_file is not None:
         sincM = np.tile(samplingTime, (len(x), 1)) - np.tile(x[:, np.newaxis], (1, len(samplingTime)))
         yNew = np.dot(y, np.sinc(sincM/T))
         plt.subplot(211)
-        plt.plot(samplingTime,yNew,'ro')
+        plt.plot(samplingTime,yNew)
+        plt.plot(samplingTime,yNew,'go')
     
 
     # tup = np.linspace(0,0.5,sampleRate)
@@ -65,9 +66,9 @@ if uploaded_file is not None:
     
     # plt.plot(tup,y1)
     
-    frequency = st.slider("freq",1,300) 
-    factor = st.slider("Factor",1,300)
-    sinc_interp(factor, frequency, x, z)
+    # frequency = st.slider("freq",1,300) 
+    fsample = st.slider("Fs",1,300)
+    sinc_interp(fsample, x, z)
 
 
     fig_html = mpld3.fig_to_html(fig)
