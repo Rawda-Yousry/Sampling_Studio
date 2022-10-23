@@ -24,23 +24,6 @@ with st.sidebar:
         
     )
 
-
-    ## for uploading files ##
-    
-    ## for saving ##
-    
-    ## Add Noise ##
-
-    # frequency = st.number_input('Frequency',1,90)
-    # factor = st.number_input('Factor',1,90)
-    # amplitude = st.number_input('Amplitude', 1,20)
-    # addSignal = st.button("Add Signal")
-    # drawAllSignal = st.button("Draw All Signals")
-    
-
-
-    # if addSignal:
-    #     ADD_SIGNAL(frequency, amplitude)
     deleteList = []
     if len(Functions.ADDED_FREQUENCES) == 0:
         st.write('')
@@ -55,8 +38,7 @@ with st.sidebar:
                     mainSignal.add_trace(go.Scatter(x=time,y=Functions.Current_amplitude))
 
 
-    # sin = np.sin(2*np.pi*frequency*time)
-    # mainSignal.add_trace(go.Scatter(x=time,y=Functions.Current_amplitude))
+
 
 
     
@@ -81,7 +63,6 @@ if selected =="Composer":
     if dataSet == "Loaded Signal":
         frequency = st.number_input('Frequency',1,90)
         amplitude = st.number_input('Amplitude', 1,20)
-        # factor = st.number_input('Factor',1,90)
         addSignal = st.button("Add Signal")
         sample = st.checkbox("Sampling")
         if addSignal:
@@ -89,7 +70,6 @@ if selected =="Composer":
         mainSignal.add_trace(go.Scatter(x=time,y=Functions.Current_amplitude))
         if sample:
             fsample = st.slider('Fs', 1,20)
-            # freq = st.slider('Frequency',1,20)
             sampleTime,sampleAmp = sampling(fsample, time, Functions.Current_amplitude)
             changedSignal.add_trace(go.Scatter(x=sampleTime,y=sampleAmp))
 
@@ -115,10 +95,9 @@ if selected =="Composer":
             fsample = st.slider('Fs', 1,20)
             # freq = st.slider('Frequency',1,20)
             sampleTime,sampleAmp = sampling(fsample, time, Functions.Current_amplitude)
-            changedSignal.add_trace(go.Scatter(x=sampleTime,y=sampleAmp))
-            # drawNoiseOnCsv(x, y)
-            # mainSignal.add_trace(go.Scatter(x=sampleTimePoints,y=sampleAmpPoints),row=1,col=1)
-            # interpolatedSignal,sampleTimePoints,sampleAmpPoints = sinc_interp(factor,frequency,x,y)
+            changedSignal.add_trace(go.Scatter(x=sampleTime,y=sampleAmp, mode="markers"))
+            interpolatedSignal,sampleTimePoints,sampleAmpPoints = sinc_interp(fsample,time,Functions.Current_amplitude)
+            changedSignal.add_trace(go.Scatter(x=time,y=interpolatedSignal))
 
         
         
@@ -138,33 +117,3 @@ if selected =="Composer":
 
     
 
-# interpolatedSignal,sampleTimePoints,sampleAmpPoints = sinc_interp(factor,frequency,time,Functions.Current_amplitude)
-
-
-
-   
-# if uploaded_file is not None:
-#     x,y = readCsv(uploaded_file)
-#     changedSignal.add_trace(go.Scatter(x=x,y=y),row=1,col=1)
-#     # mainSignal.add_trace(go.Scatter(x=sampleTimePoints,y=sampleAmpPoints),row=1,col=1)
-#     interpolatedSignal,sampleTimePoints,sampleAmpPoints = sinc_interp(factor,frequency,x,y)
-    # mainSignal.add_trace(go.Scatter(x=x,y=interpolatedSignal),row=1,col=1)
-
-# fig = px.line(x=t,y=interpolatedSignal)
-# fig.add_trace(go.Scatter(x=t,y=sin),row=1,col=1)
-# fig.add_trace(go.Scatter(x=sampleTimePoints,y=sampleAmpPoints),row=2,col=1)
-# fig.add_trace(go.Scatter(x=t,y=interpolatedSignal),row=2,col=1)
-
-
-# st.write(mainSignal)
-# st.write(changedSignal)
-# st.write(noisedSignal)
-# st.write(fig)
-
-# factor = st.sidebar.slider('factor',1,20,1,1)
-
-# plt.subplot(212)
-# plt.plot(x,y)
-
-# fig_html = mpld3.fig_to_html(fig)
-# components.html(fig_html, height=600)
