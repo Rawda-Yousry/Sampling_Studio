@@ -8,11 +8,10 @@ from functions import *
 st. set_page_config(layout="wide")
 st.header('Generation signal')
 
-global x,y
 ## plotting figure ##
 mainSignal = px.line(height=450,width=1000)
-noisedSignal= px.line(height = 350 ,width=1000)
-changedSignal= px.line(height = 350 ,width=1000)
+noisedSignal= px.line(height = 450 ,width=1000)
+changedSignal= px.line(height = 450 ,width=1000)
 ######## Side bar components #########
 with st.sidebar:
     selected= option_menu(
@@ -49,13 +48,6 @@ if selected =="Home":
     st.write("The signal can come from loaded file or composer")
 
 
-# if selected =="Add noise":
-#     noiseCheckBox = st.checkbox("Add Noise")
-#     snrRatio = st.number_input('SNR',1,260,1)
-#     if noiseCheckBox:
-#         noiseSignal=noise(Functions.Current_amplitude,snrRatio)
-#         noisedSignal.add_trace(go.Scatter(x=time,y=noiseSignal),row=1,col=1)
-
 
 if selected =="Composer":
     dataSet = st.selectbox("Which Type of signal you want?",("Loaded Signal","Uploaded Signal"))
@@ -71,7 +63,9 @@ if selected =="Composer":
         if sample:
             fsample = st.slider('Fs', 1,20)
             sampleTime,sampleAmp = sampling(fsample, time, Functions.Current_amplitude)
-            changedSignal.add_trace(go.Scatter(x=sampleTime,y=sampleAmp))
+            changedSignal.add_trace(go.Scatter(x=sampleTime,y=sampleAmp, mode="markers"))
+            interpolatedSignal,sampleTimePoints,sampleAmpPoints = sinc_interp(fsample,time,Functions.Current_amplitude)
+            changedSignal.add_trace(go.Scatter(x=time,y=interpolatedSignal))
 
     noiseCheckBox = st.checkbox("Add Noise")
     if noiseCheckBox:
@@ -93,7 +87,6 @@ if selected =="Composer":
 
         if sample:
             fsample = st.slider('Fs', 1,20)
-            # freq = st.slider('Frequency',1,20)
             sampleTime,sampleAmp = sampling(fsample, time, Functions.Current_amplitude)
             changedSignal.add_trace(go.Scatter(x=sampleTime,y=sampleAmp, mode="markers"))
             interpolatedSignal,sampleTimePoints,sampleAmpPoints = sinc_interp(fsample,time,Functions.Current_amplitude)
