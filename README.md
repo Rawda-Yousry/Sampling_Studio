@@ -1,4 +1,4 @@
-# Samping studio
+# Sampling studio
 
 ## Description 
 sampling studio is an educational website that enables the user to perform different functions on signals and can visualize it’s effects on signals instantly and all in one page.
