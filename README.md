@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 3- Run the App
 ```
-streamlit run signal_studio_app.py
+streamlit run FinalCode/signal_studio_app.py
 ```
 
 ## Team-23 Members
