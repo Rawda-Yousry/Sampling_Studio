@@ -27,29 +27,29 @@ sampling studio is an educational website that enables the user to perform diffe
 ## Application Demo
 - Default signal
 
-![1](https://im.ge/i/2VSdJX)
+![1](https://i.im.ge/2022/11/02/2VS7fM.Sampling-studio.png)
 
 - Open CSV or WAV signal
 
-![2](https://user-images.githubusercontent.com/84602951/199126508-7c50cf59-cb9f-444b-8f1c-c32c621d1fe3.png)
+![2]
 
 - Mix sin waves toghter to generate a new signal
 
-![3](https://user-images.githubusercontent.com/84602951/199126537-a8f83524-c8de-4d4e-b64a-cc7bdd790f6b.png)
+![3]
 
 - Sample and Reconstruct Signal with any frequncy (Hz)
 
-![4](https://user-images.githubusercontent.com/84602951/199126677-ee7bc252-cb31-4046-9605-e4af2ed97f6b.png)
+![4]
 
 - Sample and Reconstruct Signal with fmax
 
-![5](https://user-images.githubusercontent.com/84602951/199126806-5084391b-b2e4-49a8-9225-b6faf739dcbd.png)
+![5]
 
 - Noise to Signal
 
-![6](https://user-images.githubusercontent.com/84602951/199126838-7808a470-bc28-4a7c-8542-3ad8498cfcb2.png)
+![6]
 
-- with more features like downloading Signal and edit signals in Signal mixer
+- with more features like downloading Signal.
 
 
 ## Run the project
