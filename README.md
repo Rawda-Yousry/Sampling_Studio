@@ -17,39 +17,25 @@ sampling studio is an educational website that enables the user to perform diffe
 * Sampling the uploaded signal.
 * Downloading the signals files after you finish editing it.
 
-## Webpage
+## Application Demo
 
 
-## Required libraries
-* matplotlib library 3.6.0
-* plotly library 5.10.0
-* pandas library 1.5.1
-* streamlit library 1.13.0
-* csv library 3.10.8
-* numpy library 1.23.4
-* StringIO library 2.7.2.
-* math library 3.10.8
-* mpld3 
+## Run the project
+You need to install Python 3 and any python IDE on your computer.
+* Download Python 3
+* Download VS code
+1- Clone repository
+```
+https://github.com/Rawda-Yousry/DSP_Task1_-Team23-
 
-## Run the application 
-In the terminal write the following command "Streamlit run signal_studio_app.py"
+```
+2- Prepare Requirements
+```
+pip install -r requirements.txt
+```
 
-## Requirments 
+3- Run the App
 ```
-$ pip install streamlit 
+streamlit run signal_studio_app.py
 ```
-```
-$ pip install plotly
-```
-```
-$ pip install plotly.express
-```
-```
-$ pip install mpld3
-```
-```
-$ pip install matplotlib
-```
-```
-$ pip install pandas 
-```
+
