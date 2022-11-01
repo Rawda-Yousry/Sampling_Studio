@@ -1,6 +1,13 @@
 # Sampling studio
+## Table of contents
 
-## Description 
+- [overview](#Overview)
+- [Features and options](#Features and options)
+- [Application Demo](#application-demo)
+- [Run the Project](#run-the-project)
+- [Team Members](#team-2-members)
+- 
+## Overview 
 sampling studio is an educational website that enables the user to perform different functions on signals and can visualize it’s effects on signals instantly and all in one page.
 
 ## Features and options 
@@ -18,12 +25,16 @@ sampling studio is an educational website that enables the user to perform diffe
 * Downloading the signals files after you finish editing it.
 
 ## Application Demo
+<p align="center">
+ <img src="Assests\Application_Demo.gif"/>
+</p>
 
 
 ## Run the project
 You need to install Python 3 and any python IDE on your computer.
-* Download Python 3
-* Download VS code
+- [Download Python 3](https://www.python.org/downloads/)
+- [Download VS code](hhttps://code.visualstudio.com/download)
+
 1- Clone repository
 ```
 https://github.com/Rawda-Yousry/DSP_Task1_-Team23-
@@ -38,4 +49,18 @@ pip install -r requirements.txt
 ```
 streamlit run signal_studio_app.py
 ```
+
+## Team-23 Members
+
+&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;3rd Year Biomedical Engineering Students:
+
+- [Amira Mohamed](https://github.com/AmeeraMOhammed) | Sec 1 - BN 15
+- [Rawda Yousry](https://github.com/Rawda-Yousry) | Sec 1 - BN 35
+- [Doha Eid ](https://github.com/doha-eid)) | Sec 1 - BN 49
+- [Youssef Essam](https://github.com/jooo71) | Sec 2 - BN 58
+
+## Submitted to :
+
+- Dr.Tamer Basha & Eng.Mohamed Mostafa for Course SBE3110 @ 31-10-2022
+- 3rd Year Systems & Biomedical Engineering 1st Semster
 
