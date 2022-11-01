@@ -6,7 +6,7 @@
 - [Application Demo](#application-demo)
 - [Run the Project](#run-the-project)
 - [Team Members](#team-2-members)
-- 
+
 ## Overview 
 sampling studio is an educational website that enables the user to perform different functions on signals and can visualize it’s effects on signals instantly and all in one page.
 
@@ -52,15 +52,11 @@ streamlit run signal_studio_app.py
 
 ## Team-23 Members
 
-&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;3rd Year Biomedical Engineering Students:
+3rd Year Biomedical Engineering Students:
 
-- [Amira Mohamed](https://github.com/AmeeraMOhammed) | Sec 1 - BN 15
-- [Rawda Yousry](https://github.com/Rawda-Yousry) | Sec 1 - BN 35
-- [Doha Eid ](https://github.com/doha-eid)) | Sec 1 - BN 49
-- [Youssef Essam](https://github.com/jooo71) | Sec 2 - BN 58
+- [Amira Mohamed](https://github.com/AmeeraMOhammed)  Sec 1 - BN 15
+- [Rawda Yousry](https://github.com/Rawda-Yousry) Sec 1 - BN 35
+- [Doha Eid ](https://github.com/doha-eid)  Sec 1 - BN 49
+- [Youssef Essam](https://github.com/jooo71)  Sec 2 - BN 58
 
-## Submitted to :
-
-- Dr.Tamer Basha & Eng.Mohamed Mostafa for Course SBE3110 @ 31-10-2022
-- 3rd Year Systems & Biomedical Engineering 1st Semster
 
