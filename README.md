@@ -17,9 +17,7 @@ sampling studio is an educational website that enables the user to perform diffe
 * Sampling the uploaded signal.
 * Downloading the signals files after you finish editing it.
 
-## Website Demo
 
-## Functions used with their description 
 
 ## Required libraries
 * matplotlib library 3.6.0
