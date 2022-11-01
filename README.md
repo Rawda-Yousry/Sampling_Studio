@@ -38,8 +38,18 @@ In the terminal write the following command "Streamlit run signal_studio_app.py"
 ```
 $ pip install streamlit 
 ```
-* pip install plotly
-* pip install plotly.express
-* pip install mpld3
-* pip install matplotlib
-* pip install pandas 
+```
+$ pip install plotly
+```
+```
+$ pip install plotly.express
+```
+```
+$ pip install mpld3
+```
+```
+$ pip install matplotlib
+```
+```
+$ pip install pandas 
+```
