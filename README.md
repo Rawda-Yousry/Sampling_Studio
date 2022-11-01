@@ -35,7 +35,7 @@ sampling studio is an educational website that enables the user to perform diffe
 In the terminal write the following command "Streamlit run signal_studio_app.py"
 
 ## Requirments 
-npm install --save @github/clipboard-copy-element pip install streamlit 
+* pip install streamlit 
 * pip install plotly
 * pip install plotly.express
 * pip install mpld3
