@@ -2,15 +2,15 @@
 ## Table of contents
 
 - [Overview](#Overview)
-- [Features and options](#Features and options)
+- [Features](#Features)
 - [Application Demo](#application-demo)
 - [Run the Project](#run-the-project)
-- [Team Members](#team-2-members)
+- [Team Members](#team-23-members)
 
 ## Overview 
 sampling studio is an educational website that enables the user to perform different functions on signals and can visualize it’s effects on signals instantly and all in one page.
 
-## Features and options 
+## Features 
 * Changing signal frequency by a frequency slider that ranges from 1 to 90 HZ.
 * Changing signal ampitude by amplitude slider that ranges from 1 to 20 .
 * Generating basic sinusoidal wave and changing it’s frequency and amplitude.
