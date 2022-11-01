@@ -1,7 +1,7 @@
 # Sampling studio
 ## Table of contents
 
-- [overview](#Overview)
+- [Overview](#Overview)
 - [Features and options](#Features and options)
 - [Application Demo](#application-demo)
 - [Run the Project](#run-the-project)
@@ -26,7 +26,7 @@ sampling studio is an educational website that enables the user to perform diffe
 
 ## Application Demo
 <p align="center">
- <img src="Assests\Application_Demo.gif"/>
+ <img src=""/>
 </p>
 
 
