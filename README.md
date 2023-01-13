@@ -27,7 +27,8 @@ sampling studio is an educational website that enables the user to perform diffe
 ## Application Demo
 - Default signal
 
-![image](https://i.im.ge/2022/11/02/2VS7fM.Sampling-studio.png)
+![image](https://user-images.githubusercontent.com/93453475/212420747-b8465a9f-bed1-48d2-ab1b-37416e2d3343.png)
+
 
 
 
