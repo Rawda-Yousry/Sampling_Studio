@@ -27,7 +27,7 @@ sampling studio is an educational website that enables the user to perform diffe
 ## Application Demo
 - Default signal
 
-![image](https://user-images.githubusercontent.com/93453475/212420747-b8465a9f-bed1-48d2-ab1b-37416e2d3343.png)
+![image](https://user-images.githubusercontent.com/93453475/212421877-124f3119-d610-4693-8315-47a4e7e26d06.png)
 
 
 
@@ -42,7 +42,7 @@ sampling studio is an educational website that enables the user to perform diffe
 
 - Mix sin waves toghter to generate a new signal
 
-![2](https://i.im.ge/2022/11/02/2VSL5D.mix-sins.png)
+![image](https://user-images.githubusercontent.com/93453475/212421957-3267ef5a-146e-4a50-a611-2da1c896dbea.png)
 
 
 
@@ -55,7 +55,7 @@ sampling studio is an educational website that enables the user to perform diffe
 
 - Sample and Reconstruct Signal with any frequncy (Hz)
 
-![3](https://i.im.ge/2022/11/02/2VSCQT.samplig.png)
+![image](https://user-images.githubusercontent.com/93453475/212422120-b9390cd4-39b9-4888-b1d4-7ebeb1df46b0.png)
 
 
 
@@ -67,7 +67,7 @@ sampling studio is an educational website that enables the user to perform diffe
 
 
 - Noise to Signal
-![4](https://i.im.ge/2022/11/02/2VSGRD.noise.png)
+![image](https://user-images.githubusercontent.com/93453475/212422461-e0bb5ddd-1201-4e55-890c-543f31b940a1.png)
 
 
 
